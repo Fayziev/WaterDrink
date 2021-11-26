@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:src="#499BE1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Controller"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/actionbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="16dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_baseline_settings_24"
+        app:layout_constraintBottom_toBottomOf="@id/actionbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/circleProgressBar1"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="16dp"
+        app:cpb_background_progressbar_color="#b6bbd8"
+        app:cpb_background_progressbar_width="5dp"
+        app:cpb_progress="0"
+        app:cpb_progress_direction="to_right"
+        app:cpb_progressbar_color="#3f51b5"
+        app:cpb_progressbar_width="10dp"
+        app:cpb_round_border="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:clickable="false"
+        android:elevation="15dp"
+        android:focusable="false"
+        android:padding="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/circle"
+        app:layout_constraintLeft_toLeftOf="@id/circle"
+        app:layout_constraintRight_toRightOf="@id/circle"
+        app:layout_constraintTop_toTopOf="@id/circle"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/glasswater" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circle"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_margin="16dp"
+        android:elevation="8dp"
+        android:src="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="Tap to add water you have just drunk"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/circleProgressBar1"
+        app:layout_constraintRight_toLeftOf="@id/circle" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/circleloading"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:elevation="12dp"
+        app:layout_constraintBottom_toTopOf="@id/circle"
+        app:layout_constraintLeft_toRightOf="@id/circleProgressBar1"
+        app:layout_constraintRight_toLeftOf="@id/circle"
+        app:layout_constraintTop_toTopOf="@id/circle"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loadcircle" />
+
+    <TextView
+        android:id="@+id/litr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:textColor="#4A90E2"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/circleloading"
+        app:layout_constraintLeft_toLeftOf="@id/circleloading"
+        app:layout_constraintRight_toRightOf="@id/circleloading"
+        app:layout_constraintTop_toTopOf="@id/circleloading" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/circleloading"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionbar" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/notFound"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/listView"
+        app:layout_constraintLeft_toLeftOf="@id/listView"
+        app:layout_constraintRight_toRightOf="@id/listView"
+        app:layout_constraintTop_toTopOf="@id/listView"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/not_found" />
+
+    <TextView
+        android:id="@+id/current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2210 ml"
+        android:textColor="#00ACC1"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/circleProgressBar1"
+        app:layout_constraintLeft_toLeftOf="@id/circleProgressBar1"
+        app:layout_constraintRight_toRightOf="@id/circleProgressBar1"
+        app:layout_constraintTop_toBottomOf="@id/listView" />
+
+    <TextView
+        android:id="@+id/maxValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/circle"
+        app:layout_constraintLeft_toLeftOf="@id/circle"
+        app:layout_constraintRight_toRightOf="@id/circle"
+        app:layout_constraintTop_toBottomOf="@id/listView"
+        tools:text="3000 ml" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

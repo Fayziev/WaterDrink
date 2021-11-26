@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Edit gender"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/boy"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/boy_circle"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/girl"
+        app:layout_constraintTop_toBottomOf="@id/textEdit" />
+
+    <TextView
+        android:id="@+id/male"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Male"
+        android:textColor="#3BA1FE"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@id/boy"
+        app:layout_constraintRight_toRightOf="@id/boy"
+        app:layout_constraintTop_toBottomOf="@id/boy" />
+
+    <TextView
+        android:id="@+id/female"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Female"
+        android:textColor="#D6D6D6"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="@id/girl"
+        app:layout_constraintRight_toRightOf="@id/girl"
+        app:layout_constraintTop_toBottomOf="@id/girl" />
+
+    <ImageView
+        android:id="@+id/girl"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="@drawable/ic_girl__1_"
+        app:layout_constraintBottom_toBottomOf="@id/boy"
+        app:layout_constraintLeft_toRightOf="@id/boy"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/boy" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/girlTransparent"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="#66FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/girl"
+        app:layout_constraintLeft_toLeftOf="@id/girl"
+        app:layout_constraintRight_toRightOf="@id/girl"
+        app:layout_constraintTop_toTopOf="@id/girl" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/boyTransparent"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:src="#66FFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/boy"
+        app:layout_constraintLeft_toLeftOf="@id/boy"
+        app:layout_constraintRight_toRightOf="@id/boy"
+        app:layout_constraintTop_toTopOf="@id/boy" />
+
+
+    <TextView
+        android:id="@+id/select"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/selectdrawable"
+        android:gravity="center"
+        android:text="Select"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/male" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Cancel"
+        android:textColor="#00E3FF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@id/select"
+        app:layout_constraintTop_toBottomOf="@id/male" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

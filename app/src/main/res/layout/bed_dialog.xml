@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center|top"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Edit bed time"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <NumberPicker
+        android:id="@+id/hourPicker"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@id/textEdit"
+        app:layout_constraintTop_toBottomOf="@id/textEdit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/minutePicker"
+        app:layout_constraintLeft_toRightOf="@id/hourPicker"
+        app:layout_constraintRight_toLeftOf="@id/minutePicker"
+        app:layout_constraintTop_toTopOf="@id/minutePicker" />
+
+    <NumberPicker
+        android:id="@+id/minutePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@id/hourPicker"
+        app:layout_constraintRight_toRightOf="@id/textEdit"
+        app:layout_constraintTop_toBottomOf="@id/textEdit" />
+
+
+    <TextView
+        android:id="@+id/select"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/selectdrawable"
+        android:gravity="center"
+        android:text="Select"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hourPicker" />
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="120dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Cancel"
+        android:textColor="#00E3FF"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="@id/select"
+        app:layout_constraintTop_toBottomOf="@id/hourPicker" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        app:layout_constraintTop_toBottomOf="@id/cancel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/introductionFragment">
+
+    <fragment
+        android:id="@+id/introductionFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.IntroductionFragment"
+        android:label="IntroductionFragment"
+        tools:layout="@layout/fragment_introduction">
+        <action
+            android:id="@+id/action_introductionFragment_to_genderFragment"
+            app:destination="@id/genderFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/genderFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.GenderFragment"
+        android:label="GenderFragment"
+        tools:layout="@layout/fragment_gender">
+        <action
+            android:id="@+id/action_genderFragment_to_weightFragment"
+            app:destination="@id/weightFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/weightFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.WeightFragment"
+        android:label="WeightFragment"
+        app:enterAnim="@anim/from_right"
+        app:exitAnim="@anim/to_left"
+        app:popEnterAnim="@anim/from_left"
+        app:popExitAnim="@anim/to_right"
+        tools:layout="@layout/fragment_weight">
+        <action
+            android:id="@+id/action_weightFragment_to_wakeupFragment"
+            app:destination="@id/wakeupFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/wakeupFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.WakeupFragment"
+        android:label="WakeupFragment"
+        app:enterAnim="@anim/from_right"
+        app:exitAnim="@anim/to_left"
+        app:popEnterAnim="@anim/from_left"
+        app:popExitAnim="@anim/to_right"
+        tools:layout="@layout/fragment_wake_up">
+        <action
+            android:id="@+id/action_wakeupFragment_to_bedtimeFragment"
+            app:destination="@id/bedtimeFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/bedtimeFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.BedtimeFragment"
+        android:label="BedtimeFragment"
+        app:enterAnim="@anim/from_right"
+        app:exitAnim="@anim/to_left"
+        app:popEnterAnim="@anim/from_left"
+        app:popExitAnim="@anim/to_right"
+        tools:layout="@layout/fragment_badtime">
+        <action
+            android:id="@+id/action_bedtimeFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.MenuFragment"
+        android:label="SplashFragment"
+        app:enterAnim="@anim/from_right"
+        app:exitAnim="@anim/to_left"
+        app:popEnterAnim="@anim/from_left"
+        app:popExitAnim="@anim/to_right"
+        tools:layout="@layout/menu_layout">
+        <action
+            android:id="@+id/action_menuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="uz.gita.newdrinkwater.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment"
+        app:enterAnim="@anim/from_right"
+        app:exitAnim="@anim/to_left"
+        app:popEnterAnim="@anim/from_left"
+        app:popExitAnim="@anim/to_right"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_introductionFragment"
+            app:destination="@id/introductionFragment"
+            app:popUpTo="@id/settingsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
